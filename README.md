@@ -1,2 +1,2 @@
-# design_patterns
+# design-patterns
 java设计模式
