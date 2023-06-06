@@ -1,4 +1,4 @@
-rootProject.name = "serve"
+rootProject.name = "design-patterns"
 
 rootDir.walkTopDown().maxDepth(2).forEach { dir ->
     if (dir.isDirectory && dir != rootDir) {
