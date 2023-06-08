@@ -5,22 +5,18 @@ package com.rbtxm;
  *
  * @author guanxiangkai
  * @version 1.0
- * @since 2023年06月07日 00时12分51秒
+ * @since 2023年06月07日 星期三 00时12分51秒
  */
 public class LazySingleton {
     //懒汉式
-    private static volatile LazySingleton instance;
+    private static LazySingleton instance;
 
     private LazySingleton() {
     }
 
     public static LazySingleton getInstance() {
         if (instance == null) {
-            synchronized (LazySingleton.class) {
-                if (instance == null) {
-                    instance = new LazySingleton();
-                }
-            }
+            instance = new LazySingleton();
         }
         return instance;
     }
