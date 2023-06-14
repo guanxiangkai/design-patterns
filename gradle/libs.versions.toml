@@ -2,16 +2,16 @@
 # 统一依赖管理
 springboot = "3.1.0"
 junit = "5.9.3"
-lombok = "1.18.28"
+lombok-plugin = "8.0.1"
 logback = "1.4.7"
 
 [libraries]
 # 依赖
 junit-bom=  { group = "org.junit", name = "junit-bom", version.ref = "junit"}
-junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit" }
-lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter"}
 logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
 
 [plugins]
 # 环境
 spring-boot-gradle-plugin = { id = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "springboot"}
+lombok-plugin = { id = "io.freefair.lombok", version.ref = "lombok-plugin" }

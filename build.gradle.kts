@@ -1,32 +1,35 @@
-buildscript{
-
-    repositories{
+buildscript {
+    repositories {
         gradlePluginPortal()
         mavenCentral()
     }
 
-    dependencies{
+    dependencies {
         classpath(libs.plugins.spring.boot.gradle.plugin.get().toString())
     }
 
 }
 
+plugins {
+    id(libs.plugins.lombok.plugin.get().pluginId) version "${libs.plugins.lombok.plugin.get().version}"
+}
+
+
 subprojects {
-    apply {
-        plugin("java")
-        plugin("org.springframework.boot")
-        plugin("io.spring.dependency-management")
-    }
     repositories {
         google()
         mavenCentral()
     }
+    apply {
+        plugin("java")
+        plugin("io.freefair.lombok")
+        plugin("org.springframework.boot")
+        plugin("io.spring.dependency-management")
+    }
 
     // 配置项目信息
     group = "com.rbtxm"
-    version = "1.0.0-SNAPSHOT"
-
-
+    version = "1.0"
 
     // jdk版本
     tasks.withType<JavaCompile> {
